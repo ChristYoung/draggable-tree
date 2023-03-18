@@ -1,0 +1,128 @@
+[
+  {
+    "id": "440000198009118872",
+    "name": "My Data",
+    "type": "DIR",
+    "level": 0,
+    "expanded": false,
+    "children": [
+      {
+        "id": "210000202107071541",
+        "name": "DeviceReach ppid",
+        "type": "DIR",
+        "level": 1,
+        "expanded": false,
+        "children": [
+          {
+            "id": "2100002021x7471541",
+            "name": "AdultCompisition",
+            "type": "FILE",
+            "level": 2,
+            "expanded": false,
+            "valueList": ["family", "2persons"]
+          },
+          {
+            "id": "2100002021x747pp541",
+            "name": "AdultCompisition11",
+            "type": "FILE",
+            "level": 2,
+            "expanded": false,
+            "valueList": ["family11", "2persons11"]
+          },
+          {
+            "id": "2100002021x747pp54q",
+            "name": "Age",
+            "type": "FILE",
+            "level": 2,
+            "expanded": false,
+            "valueList": ["6", "8", "30", "50"]
+          },
+          {
+            "id": "3100002021x747pp54q",
+            "name": "Education",
+            "type": "FILE",
+            "level": 2,
+            "expanded": false,
+            "valueList": ["bachelor", "highSchool", "primarySchool"]
+          },
+          {
+            "id": "3100021x747pp54qdf",
+            "name": "Gender",
+            "type": "FILE",
+            "level": 2,
+            "expanded": false,
+            "valueList": ["Male", "Femal", "Unkonow"]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "520000200504225157",
+    "name": "Other",
+    "type": "DIR",
+    "level": 0,
+    "expanded": false,
+    "children": [
+      {
+        "id": "450000198601202215",
+        "name": "Area",
+        "type": "FILE",
+        "level": 1,
+        "expanded": false,
+        "valueList": ["New Jersey", "New York", "Phoenix"]
+      },
+      {
+        "id": "45ww000198601202215",
+        "name": "TaxRate",
+        "type": "FILE",
+        "level": 1,
+        "expanded": false,
+        "valueList": ["20%", "30%", "5%"]
+      }
+    ]
+  },
+  {
+    "id": "52566700200504225157",
+    "name": "Nested0",
+    "type": "DIR",
+    "level": 0,
+    "expanded": false,
+    "children": [
+      {
+        "id": "2w0rrt0202107071541",
+        "name": "Nested1",
+        "type": "DIR",
+        "level": 1,
+        "expanded": false,
+        "children": [
+          {
+            "id": "310vvgh747pp54qdf",
+            "name": "Nested2",
+            "type": "DIR",
+            "level": 2,
+            "expanded": false,
+            "children": [
+              {
+                "id": "310vvgh747pp54qdf",
+                "name": "Nested3-0",
+                "type": "FILE",
+                "level": 3,
+                "expanded": false,
+                "valueList": ["aaa", "bbb", "ccc"]
+              },
+              {
+                "id": "310vvgh747@p54qdf",
+                "name": "Nested3-1",
+                "type": "FILE",
+                "level": 3,
+                "expanded": false,
+                "valueList": ["xxx", "yyy", "zzz"]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

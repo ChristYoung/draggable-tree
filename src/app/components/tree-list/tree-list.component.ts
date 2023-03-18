@@ -1,10 +1,9 @@
-import { Component } from '@angular/core';
-import { ArrayDataSource } from '@angular/cdk/collections';
-import { FlatTreeControl } from '@angular/cdk/tree';
 import { HttpClient } from '@angular/common/http';
-import { OnInit } from '@angular/core';
-import { take } from 'rxjs';
-
+import { Component, OnInit } from '@angular/core';
+import { Nodes } from '@types';
+import { tap } from 'rxjs';
+import { map } from 'rxjs';
+import { delay, take } from 'rxjs';
 
 @Component({
   selector: 'app-tree-list',
@@ -12,6 +11,8 @@ import { take } from 'rxjs';
   styleUrls: ['./tree-list.component.less']
 })
 export class TreeListComponent implements OnInit {
+
+  nodes: Nodes[] = [];
 
   constructor(
     private httpClient: HttpClient,
@@ -22,9 +23,11 @@ export class TreeListComponent implements OnInit {
   }
 
   private fetchAllNodes(): void {
-    this.httpClient.request('get', 'https://draggable-tree.com/api/getAllNodes').pipe(take(1)).subscribe(res => {
-      console.log('res', res);
-    });
+    this.httpClient.request('get', 'assets/mock/mock-data.json').pipe(
+      tap(res => console.log(res)),
+      delay(2000),
+      take(1),
+    ).subscribe(nodes => this.nodes = nodes as Nodes[]);
   }
 
 }
