@@ -15,6 +15,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ZorroModule } from './zorro/zorro.module';
 import { TreeItemComponent } from './components/tree-item/tree-item.component';
+import { NzIconService } from 'ng-zorro-antd/icon';
+import { svgCreator } from '@utils';
 
 registerLocaleData(zh);
 
@@ -39,4 +41,10 @@ registerLocaleData(zh);
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(
+    private nzIconService: NzIconService,
+  ) {
+    svgCreator(this.nzIconService);
+  }
+}

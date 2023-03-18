@@ -1,10 +1,10 @@
-<div class="tree_line"
-  [ngStyle]="{ 'padding-left.px': nodeItem.level * 28}"
-  [appDraggable]="nodeItem.type === 'FILE'"
+<div class="tree_line" [ngStyle]="{ 'padding-left.px': nodeItem.level * 26}" [appDraggable]="nodeItem.type === 'FILE'"
   (click)="nodeItemClick(nodeItem)">
-  <span class="arrow" nz-icon *ngIf="nodeItem.type === 'DIR' && nodeItem.children.length > 0" [nzType]="nodeItem.expanded ? 'down' : 'right'" nzTheme="outline"></span>
+  <span class="arrow" nz-icon *ngIf="nodeItem.type === 'DIR' && nodeItem.children.length > 0"
+    [nzType]="nodeItem.expanded ? 'down' : 'right'" nzTheme="outline"></span>
   <span class="icon" nz-icon [nzType]="nodeItem.type === 'DIR' ? 'folder' : 'holder'"
     [nzTheme]="nodeItem.type === 'DIR' ? 'fill' : 'outline'"></span>
+  <span class="icon human_icon" *ngIf="nodeItem.type === 'FILE'" nz-icon [nzType]="'s:people'"></span>
   <span class="leaf_name">{{ nodeItem.name }}</span>
 </div>
 <ng-container *ngIf="nodeItem.children && nodeItem.children.length > 0 && nodeItem.expanded">
