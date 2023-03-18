@@ -20,6 +20,8 @@ import { svgCreator } from '@utils';
 import { SegmentListComponent } from './components/segment-list/segment-list.component';
 import { SegmentGroupComponent } from './components/segment-group/segment-group.component';
 import { SegmentItemComponent } from './components/segment-item/segment-item.component';
+// import 'draggable-polyfill';
+// import '../';
 
 registerLocaleData(zh);
 

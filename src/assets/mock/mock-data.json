@@ -70,36 +70,6 @@
     ]
   },
   {
-    "id": "520000200504225157",
-    "name": "Other",
-    "type": "DIR",
-    "level": 0,
-    "children": [
-      {
-        "id": "450000198601202215",
-        "name": "Area",
-        "type": "FILE",
-        "level": 1,
-        "valueList": [
-          "New Jersey",
-          "New York",
-          "Phoenix"
-        ]
-      },
-      {
-        "id": "45ww000198601202215",
-        "name": "TaxRate",
-        "type": "FILE",
-        "level": 1,
-        "valueList": [
-          "20%",
-          "30%",
-          "5%"
-        ]
-      }
-    ]
-  },
-  {
     "id": "52566700200504225157",
     "name": "Nested0",
     "type": "DIR",
@@ -171,6 +141,36 @@
               }
             ]
           }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "520000200504225157",
+    "name": "Other",
+    "type": "DIR",
+    "level": 0,
+    "children": [
+      {
+        "id": "5aar198601202215",
+        "name": "Area",
+        "type": "FILE",
+        "level": 1,
+        "valueList": [
+          "New Jersey",
+          "New York",
+          "Phoenix"
+        ]
+      },
+      {
+        "id": "45ww000198601202215",
+        "name": "TaxRate",
+        "type": "FILE",
+        "level": 1,
+        "valueList": [
+          "20%",
+          "30%",
+          "5%"
         ]
       }
     ]

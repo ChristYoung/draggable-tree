@@ -5,13 +5,14 @@ import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzGridModule } from 'ng-zorro-antd/grid';
 import { NzSpinModule } from 'ng-zorro-antd/spin';
 import { NzSkeletonModule } from 'ng-zorro-antd/skeleton';
+import { NzEmptyModule } from 'ng-zorro-antd/empty';
 // import { CdkTreeModule } from '@angular/cdk/tree';
 
 @NgModule({
   declarations: [],
   exports: [
     NzButtonModule, NzCheckboxModule, NzIconModule,
-    NzGridModule, NzSpinModule, NzSkeletonModule,
+    NzGridModule, NzSpinModule, NzSkeletonModule, NzEmptyModule,
     // CdkTreeModule
   ]
 })

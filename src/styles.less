@@ -16,7 +16,15 @@ ul, li { list-style: none; }
 body { font-size: 16px; }
 
 // dragging styles
+[draggable=true] {
+  user-select: none;
+}
+
+[dragging]{
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, .2);
+}
+
 .dragging {
-  background-color: red;
-  border: 3px dashed blue;
+  opacity: .25;
+  background-color: #fff;
 }
