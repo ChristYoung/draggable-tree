@@ -1,14 +1,7 @@
 /**
- * @description  draggable polyfill
- * @author       XboxYan
- * @email        yanwenbin1991@live.com
- * @github       https://github.com/XboxYan/draggable-polyfill
- * @license      MIT
- */
-
-/**
  * draggable polyfill
  */
+// https://juejin.cn/post/6844903982742110222#heading-9
 (function () {
   if ("setDragImage" in window.DataTransfer.prototype && document.body.animate) {
       var cloneObj = null;
@@ -26,6 +19,8 @@
       .drag-obj{position:fixed;left:0;top:0;z-index:999;pointer-events:none;}'
       document.querySelector('head').appendChild(styles);
 
+      // 隐藏默认的原生"幽灵"预览图.
+      // 并使用fakeObj来模拟预览图.
       document.addEventListener('dragstart', function (ev) {
           if (ev.target.nodeType === Node.ELEMENT_NODE) {
               dragbox = ev.target;
@@ -47,11 +42,11 @@
               fakeObj.style.width = dragbox.offsetWidth+'px';
               fakeObj.style.height = dragbox.offsetHeight+'px';
               fakeObj.style.transform = 'translate3d(0,0,0)';
+              fakeObj.style.opacity = '1';
               fakeObj.setAttribute('dragging', '');
               cloneObj.appendChild(fakeObj);
               cloneObj.className = 'drag-obj';
               cloneObj.style = 'transform:translate3d( ' + left + 'px ,' + top + 'px,0);';
-              // console.log(cloneObj)
               document.body.appendChild(cloneObj);
           }
       })
@@ -110,7 +105,9 @@
               ev.dataTransfer.dropEffect = 'move';
           }
           if (cloneObj) {
-              dragbox.style.visibility = 'hidden';
+              // 关键: 当在拖拽的copy behavior的时候, 原拖拽元素还是要显示, 此时, 需要注释掉下面这个行代码.
+              // 在拖拽的move behavior的时候, 原拖拽元素不需显示, 此时设置为hidden, 该代码需要放开.
+              // dragbox.style.visibility = 'hidden';
               var left = ~~(ev.clientX - offsetX);
               var top = ~~(ev.clientY - offsetY);
               if(ev.shiftKey || axis ){
