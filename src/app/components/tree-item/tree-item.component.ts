@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Nodes } from '@types';
 
 @Component({
   selector: 'app-tree-item',
@@ -6,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./tree-item.component.less']
 })
 export class TreeItemComponent {
+
+  @Input() nodeItem!: Nodes;
 
 }

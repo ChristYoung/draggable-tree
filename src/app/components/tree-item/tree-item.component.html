@@ -1,0 +1,9 @@
+<div class="tree_line" [ngStyle]="{ 'padding-left.px': nodeItem.level * 28}">
+  <span class="arrow" nz-icon *ngIf="nodeItem.type === 'DIR' && nodeItem.children.length > 0" [nzType]="nodeItem.expanded ? 'down' : 'right'" nzTheme="outline"></span>
+  <span class="icon" nz-icon [nzType]="nodeItem.type === 'DIR' ? 'folder' : 'holder'"
+    [nzTheme]="nodeItem.type === 'DIR' ? 'fill' : 'outline'"></span>
+  <span class="leaf_name">{{ nodeItem.name }}</span>
+</div>
+<ng-container *ngIf="nodeItem.children && nodeItem.children.length > 0">
+  <app-tree-item *ngFor="let n of nodeItem.children" [nodeItem]="n"></app-tree-item>
+</ng-container>
