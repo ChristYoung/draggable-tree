@@ -1,9 +1,9 @@
-export interface Nodes {
+export interface NodeItem {
   id: string;
   name: string;
   level: number;
-  children: Nodes[];
+  children: NodeItem[];
   type: 'FILE' | 'DIR';
-  expanded?: boolean; // 只供前端展示使用, 后端返回的数据中不包含此字段
+  expanded?: boolean; // only use for FE.
   valueList?: string[]; // every `FILE` type node has values.
 }

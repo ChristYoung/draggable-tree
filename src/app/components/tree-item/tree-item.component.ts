@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Nodes } from '@types';
+import { NodeItem } from '@types';
 
 @Component({
   selector: 'app-tree-item',
@@ -8,20 +8,10 @@ import { Nodes } from '@types';
 })
 export class TreeItemComponent {
 
-  @Input() nodeItem!: Nodes;
+  @Input() nodeItem!: NodeItem;
 
-  nodeItemClick(item: Nodes): void {
-    // this.changeExpandStatus(item);
+  nodeItemClick(item: NodeItem): void {
     item.expanded = !item.expanded;
   }
 
-  private changeExpandStatus(item: Nodes): void {
-    item.expanded = !item.expanded;
-    if (item?.children?.length > 0) {
-      for (let index = 0; index < item.children.length; index++) {
-        const element = item.children[index];
-        this.changeExpandStatus(element);
-      }
-    }
-  }
 }

@@ -17,6 +17,9 @@ import { ZorroModule } from './zorro/zorro.module';
 import { TreeItemComponent } from './components/tree-item/tree-item.component';
 import { NzIconService } from 'ng-zorro-antd/icon';
 import { svgCreator } from '@utils';
+import { SegmentListComponent } from './components/segment-list/segment-list.component';
+import { SegmentGroupComponent } from './components/segment-group/segment-group.component';
+import { SegmentItemComponent } from './components/segment-item/segment-item.component';
 
 registerLocaleData(zh);
 
@@ -27,6 +30,9 @@ registerLocaleData(zh);
     HomeComponent,
     DraggableDirective,
     TreeItemComponent,
+    SegmentListComponent,
+    SegmentGroupComponent,
+    SegmentItemComponent,
   ],
   imports: [
     BrowserModule,

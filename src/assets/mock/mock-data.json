@@ -4,54 +4,66 @@
     "name": "My Data",
     "type": "DIR",
     "level": 0,
-    "expanded": false,
     "children": [
       {
         "id": "210000202107071541",
         "name": "DeviceReach ppid",
         "type": "DIR",
         "level": 1,
-        "expanded": false,
         "children": [
           {
             "id": "2100002021x7471541",
             "name": "AdultCompisition",
             "type": "FILE",
             "level": 2,
-            "expanded": false,
-            "valueList": ["family", "2persons"]
+            "valueList": [
+              "family",
+              "2persons"
+            ]
           },
           {
             "id": "2100002021x747pp541",
             "name": "AdultCompisition11",
             "type": "FILE",
             "level": 2,
-            "expanded": false,
-            "valueList": ["family11", "2persons11"]
+            "valueList": [
+              "family11",
+              "2persons11"
+            ]
           },
           {
             "id": "2100002021x747pp54q",
             "name": "Age",
             "type": "FILE",
             "level": 2,
-            "expanded": false,
-            "valueList": ["6", "8", "30", "50"]
+            "valueList": [
+              "6",
+              "8",
+              "30",
+              "50"
+            ]
           },
           {
             "id": "3100002021x747pp54q",
             "name": "Education",
             "type": "FILE",
             "level": 2,
-            "expanded": false,
-            "valueList": ["bachelor", "highSchool", "primarySchool"]
+            "valueList": [
+              "bachelor",
+              "highSchool",
+              "primarySchool"
+            ]
           },
           {
             "id": "3100021x747pp54qdf",
             "name": "Gender",
             "type": "FILE",
             "level": 2,
-            "expanded": false,
-            "valueList": ["Male", "Femal", "Unkonow"]
+            "valueList": [
+              "Male",
+              "Femal",
+              "Unkonow"
+            ]
           }
         ]
       }
@@ -62,23 +74,28 @@
     "name": "Other",
     "type": "DIR",
     "level": 0,
-    "expanded": false,
     "children": [
       {
         "id": "450000198601202215",
         "name": "Area",
         "type": "FILE",
         "level": 1,
-        "expanded": false,
-        "valueList": ["New Jersey", "New York", "Phoenix"]
+        "valueList": [
+          "New Jersey",
+          "New York",
+          "Phoenix"
+        ]
       },
       {
         "id": "45ww000198601202215",
         "name": "TaxRate",
         "type": "FILE",
         "level": 1,
-        "expanded": false,
-        "valueList": ["20%", "30%", "5%"]
+        "valueList": [
+          "20%",
+          "30%",
+          "5%"
+        ]
       }
     ]
   },
@@ -87,37 +104,70 @@
     "name": "Nested0",
     "type": "DIR",
     "level": 0,
-    "expanded": false,
     "children": [
       {
         "id": "2w0rrt0202107071541",
         "name": "Nested1",
         "type": "DIR",
         "level": 1,
-        "expanded": false,
         "children": [
           {
             "id": "310vvgh747pp54qdf",
             "name": "Nested2",
             "type": "DIR",
             "level": 2,
-            "expanded": false,
             "children": [
               {
                 "id": "310vvgh747pp54qdf",
                 "name": "Nested3-0",
                 "type": "FILE",
                 "level": 3,
-                "expanded": false,
-                "valueList": ["aaa", "bbb", "ccc"]
+                "valueList": [
+                  "aaa",
+                  "bbb",
+                  "ccc"
+                ]
               },
               {
                 "id": "310vvgh747@p54qdf",
                 "name": "Nested3-1",
                 "type": "FILE",
                 "level": 3,
-                "expanded": false,
-                "valueList": ["xxx", "yyy", "zzz"]
+                "valueList": [
+                  "xxx",
+                  "yyy",
+                  "zzz"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "rrio4557pp54qdf",
+            "name": "Nested2.1",
+            "type": "DIR",
+            "level": 2,
+            "children": [
+              {
+                "id": "rrio4557pp54@11",
+                "name": "Nested3.1-0",
+                "type": "FILE",
+                "level": 3,
+                "valueList": [
+                  "aaa",
+                  "bbb",
+                  "ccc"
+                ]
+              },
+              {
+                "id": "tty@p54qdf",
+                "name": "Nested3.1-1",
+                "type": "FILE",
+                "level": 3,
+                "valueList": [
+                  "xxx",
+                  "yyy",
+                  "zzz"
+                ]
               }
             ]
           }
