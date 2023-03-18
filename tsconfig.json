@@ -25,6 +25,9 @@
     "paths": {
       "@types": [
         "src/types/index.ts"
+      ],
+      "@mock": [
+        "src/mock/index.ts"
       ]
     },
     "useDefineForClassFields": false
