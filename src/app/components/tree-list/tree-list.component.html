@@ -1,8 +1,7 @@
 <!-- nodes: {{ nodes | json }} -->
-<nz-spin [nzSpinning]="loading">
-  <div class="tree_box">
-    <div class="line_container" *ngFor="let item of nodes">
-      <app-tree-item [nodeItem]="item"></app-tree-item>
-    </div>
+<div class="tree_box">
+  <nz-skeleton [nzActive]="true" [nzLoading]="loading"></nz-skeleton>
+  <div class="line_container" *ngFor="let item of nodes">
+    <app-tree-item [nodeItem]="item"></app-tree-item>
   </div>
-</nz-spin>
+</div>
