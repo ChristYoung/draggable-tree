@@ -14,6 +14,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ZorroModule } from './zorro/zorro.module';
+import { TreeItemComponent } from './components/tree-item/tree-item.component';
 
 registerLocaleData(zh);
 
@@ -23,6 +24,7 @@ registerLocaleData(zh);
     TreeListComponent,
     HomeComponent,
     DraggableDirective,
+    TreeItemComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,9 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Nodes } from '@types';
-import { tap } from 'rxjs';
-import { map } from 'rxjs';
-import { delay, take } from 'rxjs';
+import { delay, finalize, take, tap } from 'rxjs';
 
 @Component({
   selector: 'app-tree-list',
@@ -13,6 +11,7 @@ import { delay, take } from 'rxjs';
 export class TreeListComponent implements OnInit {
 
   nodes: Nodes[] = [];
+  loading: boolean = false;
 
   constructor(
     private httpClient: HttpClient,
@@ -23,9 +22,11 @@ export class TreeListComponent implements OnInit {
   }
 
   private fetchAllNodes(): void {
+    this.loading = true;
     this.httpClient.request('get', 'assets/mock/mock-data.json').pipe(
       tap(res => console.log(res)),
-      delay(2000),
+      delay(1500),
+      finalize(() => this.loading = false),
       take(1),
     ).subscribe(nodes => this.nodes = nodes as Nodes[]);
   }
