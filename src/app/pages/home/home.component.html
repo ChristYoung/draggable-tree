@@ -6,7 +6,13 @@
   <div class="right_side" nz-col [nzSpan]="12">
     <p>Include members in these segments</p>
     <div class="card_container" appDroppable [droppedClass]="'droppedClass'" (dropped)="droped($event)">
-      <nz-empty style="margin-top: 40px;" [nzNotFoundContent]="'Please drag items on the left here.'"></nz-empty>
+      <div class="seg_wrapper" *ngIf="segmentGroups.length > 0; else noData">
+        <app-segment-list [segmentGroups]="segmentGroups"></app-segment-list>
+      </div>
     </div>
   </div>
 </div>
+
+<ng-template #noData>
+  <nz-empty style="margin-top: 40px;" [nzNotFoundContent]="'Please drag items on the left here.'"></nz-empty>
+</ng-template>

@@ -1,10 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { NodeItem } from '@types';
 
 @Component({
   selector: 'app-segment-group',
   templateUrl: './segment-group.component.html',
   styleUrls: ['./segment-group.component.less']
 })
-export class SegmentGroupComponent {
+export class SegmentGroupComponent implements OnInit {
+
+  @Input() segments: NodeItem[] = [];
+
+  ngOnInit(): void {
+
+  }
 
 }

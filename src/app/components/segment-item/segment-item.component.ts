@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { NodeItem } from '@types';
 
 @Component({
   selector: 'app-segment-item',
@@ -6,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./segment-item.component.less']
 })
 export class SegmentItemComponent {
+
+  @Input() segmentItem: NodeItem;
 
 }

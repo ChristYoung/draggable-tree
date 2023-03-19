@@ -1,1 +1,3 @@
-<p>segment-list works!</p>
+<div class="group_container" *ngFor="let group of segmentGroups">
+  <app-segment-group [segments]="group"></app-segment-group>
+</div>

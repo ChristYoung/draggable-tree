@@ -61,10 +61,11 @@
                       { transform: cloneObj.style.transform},
                       { transform: 'translate3d('+left+'px,'+top+'px,0)' }
                   ],
-                  {
-                      duration: 150,
-                      easing:"ease-in-out",
-                  }
+                  // 拖拽完成后, fakeObj立即消失
+                  // {
+                  //     duration: 150,
+                  //     easing:"ease-in-out",
+                  // }
               )
               reset.onfinish = function(){
                   document.body.removeChild(cloneObj);

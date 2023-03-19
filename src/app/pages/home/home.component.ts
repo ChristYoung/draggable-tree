@@ -11,6 +11,7 @@ import { tap, delay, finalize, take } from 'rxjs';
 export class HomeComponent implements OnInit {
 
   nodes: NodeItem[] = [];
+  segmentGroups: NodeItem[][] = [];
   loading: boolean = false;
 
   constructor(private httpClient: HttpClient,) { }
@@ -20,7 +21,7 @@ export class HomeComponent implements OnInit {
   }
 
   droped(n: NodeItem): void {
-    console.log('n', n);
+    this.segmentGroups.push([n]);
   }
 
   private fetchAllNodeItem(): void {
