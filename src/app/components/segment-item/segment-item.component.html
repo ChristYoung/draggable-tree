@@ -10,19 +10,19 @@
     <div class="values">
       <div class="search_box">
         <nz-input-group [nzPrefix]="search">
-          <input type="text" nz-input placeholder="Search" />
+          <input type="text" nz-input placeholder="Search" [(ngModel)]="searchContent" (ngModelChange)="searchValueList($event)" />
         </nz-input-group>
         <ng-template #search>
           <span nz-icon nzType="search"></span>
         </ng-template>
       </div>
       <div class="selected_info">
-        <span class="clear_all" nz-typography nzType="success">Clear All</span>
-        <span class="count">2 Selected</span>
+        <span class="clear_all" nz-typography nzType="success" (click)="clearAll()">Clear All</span>
+        <span class="count">{{selectedCount}} Selected</span>
       </div>
       <div class="chx_box">
         <div nz-row [nzGutter]="12">
-          <div nz-col [nzSpan]="8" *ngFor="let valItem of segmentItem.valueList">
+          <div nz-col [nzSpan]="8" *ngFor="let valItem of filterValueList">
             <div class="label_item">
               <label nz-checkbox [(ngModel)]="valItem.checked" (ngModelChange)="valueSelectedChange()">{{valItem.key}}</label>
               <p>{{valItem.value}}</p>

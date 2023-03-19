@@ -1,9 +1,13 @@
 <div class="main" nz-row>
-  <div class="left_side" nz-col [nzSpan]="11">
+  <div class="left_side" nz-col [nzSpan]="10">
     <nz-skeleton [nzActive]="true" [nzLoading]="loading"></nz-skeleton>
+    <div nz-row nzGutter="12" class="table_header" *ngIf="nodes?.length > 0">
+      <div nz-col [nzSpan]="18">Name</div>
+      <div nz-col [nzSpan]="6">Size</div>
+    </div>
     <app-tree-list [nodes]="nodes"></app-tree-list>
   </div>
-  <div class="right_side" nz-col [nzSpan]="13">
+  <div class="right_side" nz-col [nzSpan]="14">
     <p>Include members in these segments</p>
     <div class="card_container" appDroppable [droppedClass]="'droppedClass'" (dropped)="droped($event)">
       <div class="seg_wrapper" *ngIf="segmentGroups.length > 0; else noData">
