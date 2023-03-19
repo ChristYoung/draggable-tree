@@ -27,7 +27,7 @@ export class DroppableDirective {
   onDragOver(e: Event): void {
     const { ele, rd2, droppedClass } = this;
     e.preventDefault();
-    // e.stopPropagation();
+    // e.stopPropagation(); // if uncomment this, the drag pollify will be failure.
     rd2.addClass(ele.nativeElement, droppedClass);
   }
 
@@ -35,8 +35,7 @@ export class DroppableDirective {
   onDragEnter(e: Event): void {
     const { ele, rd2, droppedClass } = this;
     e.preventDefault();
-    // e.stopPropagation();
-    // console.log('ele.nativeElement dragenter', ele.nativeElement);
+    e.stopPropagation();
     rd2.addClass(ele.nativeElement, droppedClass);
   }
 
@@ -44,7 +43,7 @@ export class DroppableDirective {
   onDragLeave(e: Event): void {
     const { ele, rd2, droppedClass } = this;
     e.preventDefault();
-    // e.stopPropagation();
+    e.stopPropagation();
     rd2.removeClass(ele.nativeElement, droppedClass);
   }
 

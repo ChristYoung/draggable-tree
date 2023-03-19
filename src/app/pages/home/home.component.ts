@@ -24,13 +24,12 @@ export class HomeComponent implements OnInit {
   droped(n: NodeItem): void {
     this.segmentGroups.push([n]);
     const path = getPathByNodeId(n.id, this.nodes);
-    console.log('path', path);
   }
 
   private fetchAllNodeItem(): void {
     this.loading = true;
     this.httpClient.request('get', 'assets/mock/mock-data.json').pipe(
-      tap(res => console.log(res)),
+      tap(res => sessionStorage.setItem('allNodes', JSON.stringify(res))),
       // delay(900),
       finalize(() => this.loading = false),
       take(1),

@@ -41,8 +41,6 @@ export class DraggableDirective {
   @HostListener('dragend', ['$event'])
   onDragEnd(e: Event): void {
     const { ele, rd2, draggingClass } = this;
-    // console.log('e.target', e.target);
-    // console.log('ele.nativeElement', ele.nativeElement);
     if (e.target === ele.nativeElement) {
       rd2.removeClass(ele.nativeElement, draggingClass);
     }

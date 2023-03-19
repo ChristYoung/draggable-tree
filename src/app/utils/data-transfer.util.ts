@@ -24,3 +24,12 @@ export function getPathByNodeId(id: string, totalData: NodeItem[]): string {
   traverse(id, [], totalData);
   return result.map(r => r.name).join(' / ');
 }
+
+export function safeJSONParse<T>(jsonString: string, defaultValue = null): T {
+  try {
+    return JSON.parse(jsonString) as T;
+  } catch (e) {
+    console.error('error format json', e);
+    return defaultValue;
+  }
+}

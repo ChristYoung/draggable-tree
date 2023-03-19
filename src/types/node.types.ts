@@ -4,6 +4,7 @@ export interface NodeItem {
   level: number;
   children: NodeItem[];
   type: 'FILE' | 'DIR';
+  path?: string;
   expanded?: boolean; // only use for FE.
   valueList?: string[]; // every `FILE` type node has values.
 }
