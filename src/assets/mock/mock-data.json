@@ -17,8 +17,8 @@
             "type": "FILE",
             "level": 2,
             "valueList": [
-              "family",
-              "2persons"
+              { "key": "family", "value": 22, "checked": false },
+              { "key": "persons", "value": 12, "checked": false }
             ]
           },
           {
@@ -27,8 +27,8 @@
             "type": "FILE",
             "level": 2,
             "valueList": [
-              "family11",
-              "2persons11"
+              { "key": "family", "value": 2, "checked": false },
+              { "key": "persons", "value": 12, "checked": false }
             ]
           },
           {
@@ -37,10 +37,9 @@
             "type": "FILE",
             "level": 2,
             "valueList": [
-              "6",
-              "8",
-              "30",
-              "50"
+              { "key": "6", "value": 12, "checked": false },
+              { "key": "7", "value": 12, "checked": false },
+              { "key": "30", "value": 12, "checked": false }
             ]
           },
           {
@@ -49,9 +48,12 @@
             "type": "FILE",
             "level": 2,
             "valueList": [
-              "bachelor",
-              "highSchool",
-              "primarySchool"
+              { "key": "bachelor", "value": 133, "checked": false },
+              { "key": "highSchool", "value": 5, "checked": false },
+              { "key": "graduate", "value": 112, "checked": false },
+              { "key": "phd", "value": 6, "checked": false },
+              { "key": "college", "value": 6, "checked": false },
+              { "key": "university", "value": 6, "checked": false }
             ]
           },
           {
@@ -60,9 +62,9 @@
             "type": "FILE",
             "level": 2,
             "valueList": [
-              "Male",
-              "Femal",
-              "Unkonow"
+              { "key": "Male", "value": 90, "checked": false },
+              { "key": "Femal", "value": 12, "checked": false },
+              { "key": "Unkonow", "value": 56, "checked": false }
             ]
           }
         ]
@@ -93,9 +95,9 @@
                 "type": "FILE",
                 "level": 3,
                 "valueList": [
-                  "aaa",
-                  "bbb",
-                  "ccc"
+                  { "key": "aaa", "value": 30, "checked": false },
+                  { "key": "bbb", "value": 37, "checked": false },
+                  { "key": "fff", "value": 23, "checked": false }
                 ]
               },
               {
@@ -104,9 +106,9 @@
                 "type": "FILE",
                 "level": 3,
                 "valueList": [
-                  "xxx",
-                  "yyy",
-                  "zzz"
+                  { "key": "xxx", "value": 14, "checked": false },
+                  { "key": "yyy", "value": 53, "checked": false },
+                  { "key": "zzz", "value": 76, "checked": false }
                 ]
               }
             ]
@@ -123,20 +125,9 @@
                 "type": "FILE",
                 "level": 3,
                 "valueList": [
-                  "aaa",
-                  "bbb",
-                  "ccc"
-                ]
-              },
-              {
-                "id": "tty@p54qdf",
-                "name": "Nested3.1-1",
-                "type": "FILE",
-                "level": 3,
-                "valueList": [
-                  "xxx",
-                  "yyy",
-                  "zzz"
+                  { "key": "aaa", "value": 77, "checked": false },
+                  { "key": "bbb", "value": 37, "checked": false },
+                  { "key": "ccc", "value": 19, "checked": false }
                 ]
               }
             ]
@@ -157,9 +148,9 @@
         "type": "FILE",
         "level": 1,
         "valueList": [
-          "New Jersey",
-          "New York",
-          "Phoenix"
+          { "key": "New Jersey", "value": 57, "checked": false },
+          { "key": "New York", "value": 19, "checked": false },
+          { "key": "Phoenix", "value": 3, "checked": false }
         ]
       },
       {
@@ -168,9 +159,9 @@
         "type": "FILE",
         "level": 1,
         "valueList": [
-          "20%",
-          "30%",
-          "5%"
+          { "key": "20%", "value": 99, "checked": false },
+          { "key": "30%", "value": 9, "checked": false },
+          { "key": "50%", "value": 22, "checked": false }
         ]
       }
     ]

@@ -22,8 +22,7 @@ p, h3 { margin: 0; padding: 0; }
     .icon {
       display: block; color: #9E9E9E;
       margin-right: 18px;
-      margin-top: 3px;
-      font-size: 16px;
+      font-size: 24px;
      }
     display: flex;
     align-items: center;
@@ -33,6 +32,7 @@ p, h3 { margin: 0; padding: 0; }
   }
   .seg_body {
     padding: 16px;
+    padding-bottom: 0;
     .path {
       margin-bottom: 12px;
     }
@@ -50,8 +50,18 @@ p, h3 { margin: 0; padding: 0; }
         .clear_all {
           cursor: pointer;
         }
-        .chx_box {
-          padding: 3px 5px;
+      }
+      .chx_box {
+        padding: 3px 5px;
+        margin-top: 5px;
+        .label_item {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin-bottom: 5px;
+          &:nth-last-child(1) {
+            margin-bottom: 0;
+          }
         }
       }
     }

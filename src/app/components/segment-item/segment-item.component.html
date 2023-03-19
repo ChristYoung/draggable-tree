@@ -2,8 +2,8 @@
   <div class="seg_header">
     <span class="icon" nz-icon [nzType]="'holder'" [nzTheme]="'outline'"></span>
     <span class="item_name">{{segmentItem.name}}</span>
-    <span class="equal">=</span>
-    <span class="selected_value"><b>sdfsd, sad, fsdsdfsd, fsd</b></span>
+    <span class="equal" [hidden]="!selectedValues">=</span>
+    <span class="selected_value"><b>{{selectedValues}}</b></span>
   </div>
   <div class="seg_body">
     <p class="path">{{segmentItem.path}}</p>
@@ -21,9 +21,14 @@
         <span class="count">2 Selected</span>
       </div>
       <div class="chx_box">
-        <label nz-checkbox>
-          dd
-        </label>
+        <div nz-row [nzGutter]="12">
+          <div nz-col [nzSpan]="8" *ngFor="let valItem of segmentItem.valueList">
+            <div class="label_item">
+              <label nz-checkbox [(ngModel)]="valItem.checked" (ngModelChange)="valueSelectedChange()">{{valItem.key}}</label>
+              <p>{{valItem.value}}</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>

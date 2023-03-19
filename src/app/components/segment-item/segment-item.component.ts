@@ -9,5 +9,13 @@ import { NodeItem } from '@types';
 export class SegmentItemComponent {
 
   @Input() segmentItem: NodeItem;
+  selectedValues: string;
+
+  valueSelectedChange(): void {
+    this.selectedValues =
+      this.segmentItem.valueList
+        .filter(v => v.checked)
+        .map(v => v.key).join(',');
+  }
 
 }

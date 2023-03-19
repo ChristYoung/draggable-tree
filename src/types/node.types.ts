@@ -6,5 +6,11 @@ export interface NodeItem {
   type: 'FILE' | 'DIR';
   path?: string;
   expanded?: boolean; // only use for FE.
-  valueList?: string[]; // every `FILE` type node has values.
+  valueList?: ValueItem[]; // every `FILE` type node has values.
+}
+
+export interface ValueItem {
+  key: string;
+  value: number;
+  checked?: boolean;
 }
