@@ -1,9 +1,9 @@
 <div class="main" nz-row>
-  <div class="left_side" nz-col [nzSpan]="12">
+  <div class="left_side" nz-col [nzSpan]="11">
     <nz-skeleton [nzActive]="true" [nzLoading]="loading"></nz-skeleton>
     <app-tree-list [nodes]="nodes"></app-tree-list>
   </div>
-  <div class="right_side" nz-col [nzSpan]="12">
+  <div class="right_side" nz-col [nzSpan]="13">
     <p>Include members in these segments</p>
     <div class="card_container" appDroppable [droppedClass]="'droppedClass'" (dropped)="droped($event)">
       <div class="seg_wrapper" *ngIf="segmentGroups.length > 0; else noData">

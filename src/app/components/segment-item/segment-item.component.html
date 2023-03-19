@@ -1,1 +1,30 @@
-<p>{{ segmentItem | json }}</p>
+<div class="item_box">
+  <div class="seg_header">
+    <span class="icon" nz-icon [nzType]="'holder'" [nzTheme]="'outline'"></span>
+    <span class="item_name">{{segmentItem.name}}</span>
+    <span class="equal">=</span>
+    <span class="selected_value"><b>sdfsd, sad, fsdsdfsd, fsd</b></span>
+  </div>
+  <div class="seg_body">
+    <p class="path">MyData / DeviceReach-ppid / Education</p>
+    <div class="values">
+      <div class="search_box">
+        <nz-input-group [nzPrefix]="search">
+          <input type="text" nz-input placeholder="Search" />
+        </nz-input-group>
+        <ng-template #search>
+          <span nz-icon nzType="search"></span>
+        </ng-template>
+      </div>
+      <div class="selected_info">
+        <span class="clear_all" nz-typography nzType="success">Clear All</span>
+        <span class="count">2 Selected</span>
+      </div>
+      <div class="chx_box">
+        <label nz-checkbox>
+          dd
+        </label>
+      </div>
+    </div>
+  </div>
+</div>

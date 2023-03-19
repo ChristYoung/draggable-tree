@@ -28,7 +28,7 @@ export class HomeComponent implements OnInit {
     this.loading = true;
     this.httpClient.request('get', 'assets/mock/mock-data.json').pipe(
       tap(res => console.log(res)),
-      delay(900),
+      // delay(900),
       finalize(() => this.loading = false),
       take(1),
     ).subscribe(nodes => this.nodes = nodes as NodeItem[]);
