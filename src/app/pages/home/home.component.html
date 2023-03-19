@@ -1,6 +1,7 @@
 <div class="main" nz-row>
   <div class="left_side" nz-col [nzSpan]="12">
-    <app-tree-list></app-tree-list>
+    <nz-skeleton [nzActive]="true" [nzLoading]="loading"></nz-skeleton>
+    <app-tree-list [nodes]="nodes"></app-tree-list>
   </div>
   <div class="right_side" nz-col [nzSpan]="12">
     <p>Include members in these segments</p>
