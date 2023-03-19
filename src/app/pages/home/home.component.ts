@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { NodeItem } from '@types';
+import { getPathByNodeId } from '@utils';
 import { tap, delay, finalize, take } from 'rxjs';
 
 @Component({
@@ -22,6 +23,8 @@ export class HomeComponent implements OnInit {
 
   droped(n: NodeItem): void {
     this.segmentGroups.push([n]);
+    const path = getPathByNodeId(n.id, this.nodes);
+    console.log('path', path);
   }
 
   private fetchAllNodeItem(): void {

@@ -51,7 +51,7 @@ export class DroppableDirective {
   @HostListener('drop', ['$event'])
   onDrop(e: Event): void {
     e.preventDefault();
-    // e.stopPropagation();
+    e.stopPropagation();
     const { ele, dragDataService, dropped, rd2, droppedClass } = this;
     // console.log("DroppableDirective -> onDrop -> ele.nativeElement", ele.nativeElement);
     // console.log("DroppableDirective -> onDrop -> e.target", e.target);
