@@ -1,3 +1,9 @@
-<div class="group_container" *ngFor="let group of segmentGroups">
-  <app-segment-group [segments]="group"></app-segment-group>
-</div>
+<ng-container *ngFor="let group of segmentGroups; let _index = index;">
+  <div class="group_container">
+    <app-segment-group [segments]="group"></app-segment-group>
+  </div>
+  <div class="divide_btn"  *ngIf="segmentGroups.length > 1 && _index < segmentGroups.length - 1;">
+    <button type="button" nz-button nzType="primary" nzShape="round">AND <span nz-icon nzType="down" nzTheme="outline"></span></button>
+  </div>
+</ng-container>
+
