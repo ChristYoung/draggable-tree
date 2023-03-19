@@ -38,7 +38,7 @@
               offsetY = startY - top;
               dragbox.style.transition = 'none';
               cloneObj = document.createElement('DIV');
-              var fakeObj = dragbox.cloneNode(true);
+              var fakeObj = dragbox.cloneNode(true); // fakeObj就是模拟拖拽时的预览块.
               fakeObj.style.width = dragbox.offsetWidth+'px';
               fakeObj.style.height = dragbox.offsetHeight+'px';
               fakeObj.style.transform = 'translate3d(0,0,0)';

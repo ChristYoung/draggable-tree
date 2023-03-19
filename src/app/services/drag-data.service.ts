@@ -1,5 +1,6 @@
-// 自定义拖拽时传递数据的服务
+// transfer drag data.
 import { Injectable } from '@angular/core';
+import { NodeItem } from '@types';
 import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
@@ -7,13 +8,13 @@ import { BehaviorSubject, Observable } from 'rxjs';
 })
 export class DragDataService {
 
-  private _dragData$: BehaviorSubject<any> = new BehaviorSubject<any>(null);
+  private _dragData$: BehaviorSubject<NodeItem> = new BehaviorSubject<NodeItem>(null);
 
   clearDragData(): void {
     this._dragData$.next(null);
   }
 
-  setDragData(dragData: any): void {
+  setDragData(dragData: NodeItem): void {
     this._dragData$.next(dragData);
   }
 

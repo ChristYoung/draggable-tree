@@ -1,4 +1,5 @@
 import { Directive, ElementRef, HostListener, Input, Renderer2 } from '@angular/core';
+import { NodeItem } from '@types';
 import { DragDataService } from '../services/drag-data.service';
 
 @Directive({
@@ -18,9 +19,9 @@ export class DraggableDirective {
     return this._canDraggable;
   }
 
-  @Input()
-  draggingClass!: string;
-  @Input() dragData: any;
+  @Input() draggingClass!: string;
+  @Input() dragData: NodeItem;
+  @Input() dragId: string;
 
   constructor(
     private ele: ElementRef,

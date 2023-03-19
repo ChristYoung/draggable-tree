@@ -1,4 +1,6 @@
 import { Directive, ElementRef, EventEmitter, HostListener, Input, Output, Renderer2 } from '@angular/core';
+import { NodeItem } from '@types';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { take } from 'rxjs/operators';
 import { DragDataService } from '../services/drag-data.service';
 
@@ -9,12 +11,17 @@ export class DroppableDirective {
 
   @Output() dropped: EventEmitter<any> = new EventEmitter<any>();
   @Input() droppedClass: string;
+  @Input() dropTags: string[];
+
+  private data$: Observable<NodeItem>;
 
   constructor(
     private ele: ElementRef,
     private rd2: Renderer2,
     private dragDataService: DragDataService,
-  ) { }
+  ) {
+    this.data$ = this.dragDataService.getDragData$().pipe(take(1));
+  }
 
   @HostListener('dragover', ['$event'])
   onDragOver(e: Event): void {
