@@ -27,7 +27,7 @@ export class DroppableDirective {
   onDragOver(e: Event): void {
     const { ele, rd2, droppedClass } = this;
     e.preventDefault();
-    e.stopPropagation();
+    // e.stopPropagation();
     rd2.addClass(ele.nativeElement, droppedClass);
   }
 
@@ -35,7 +35,8 @@ export class DroppableDirective {
   onDragEnter(e: Event): void {
     const { ele, rd2, droppedClass } = this;
     e.preventDefault();
-    e.stopPropagation();
+    // e.stopPropagation();
+    // console.log('ele.nativeElement dragenter', ele.nativeElement);
     rd2.addClass(ele.nativeElement, droppedClass);
   }
 
@@ -43,14 +44,14 @@ export class DroppableDirective {
   onDragLeave(e: Event): void {
     const { ele, rd2, droppedClass } = this;
     e.preventDefault();
-    e.stopPropagation();
+    // e.stopPropagation();
     rd2.removeClass(ele.nativeElement, droppedClass);
   }
 
   @HostListener('drop', ['$event'])
   onDrop(e: Event): void {
     e.preventDefault();
-    e.stopPropagation();
+    // e.stopPropagation();
     const { ele, dragDataService, dropped, rd2, droppedClass } = this;
     // console.log("DroppableDirective -> onDrop -> ele.nativeElement", ele.nativeElement);
     // console.log("DroppableDirective -> onDrop -> e.target", e.target);

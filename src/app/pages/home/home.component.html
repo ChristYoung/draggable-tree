@@ -5,7 +5,7 @@
   </div>
   <div class="right_side" nz-col [nzSpan]="12">
     <p>Include members in these segments</p>
-    <div class="card_container">
+    <div class="card_container" appDroppable [droppedClass]="'droppedClass'">
       <nz-empty style="margin-top: 40px;" [nzNotFoundContent]="'Please drag items on the left here.'"></nz-empty>
     </div>
   </div>

@@ -110,6 +110,8 @@
               // dragbox.style.visibility = 'hidden';
               var left = ~~(ev.clientX - offsetX);
               var top = ~~(ev.clientY - offsetY);
+              console.log('left',left)
+              console.log('top',top)
               if(ev.shiftKey || axis ){
                   if(_axis==='X'){
                       top = ~~(startY - offsetY);
