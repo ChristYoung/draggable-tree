@@ -19,6 +19,10 @@ export class HomeComponent implements OnInit {
     this.fetchAllNodeItem();
   }
 
+  droped(n: NodeItem): void {
+    console.log('n', n);
+  }
+
   private fetchAllNodeItem(): void {
     this.loading = true;
     this.httpClient.request('get', 'assets/mock/mock-data.json').pipe(

@@ -1,5 +1,5 @@
 <div class="tree_line" [ngStyle]="{ 'padding-left.px': nodeItem.level * 26}" [appDraggable]="nodeItem.type === 'FILE'"
-  [draggingClass]="'dragging'" (click)="nodeItemClick(nodeItem)">
+  [draggingClass]="'dragging'" [dragData]="nodeItem" (click)="nodeItemClick(nodeItem)">
 
   <span class="arrow" nz-icon *ngIf="nodeItem.type === 'DIR' && nodeItem.children.length > 0"
     [nzType]="nodeItem.expanded ? 'down' : 'right'" nzTheme="outline"></span>
