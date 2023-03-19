@@ -14,6 +14,8 @@ export class SegmentItemComponent implements OnInit {
   searchContent: string;
   selectedCount = 0;
 
+  shrink: boolean = false;
+
   ngOnInit(): void {
     this.filterValueList = this.segmentItem.valueList;
   }
@@ -36,6 +38,10 @@ export class SegmentItemComponent implements OnInit {
       this.selectedValues = null;
       this.selectedCount = 0;
     }
+  }
+
+  close(): void {
+    // TODO
   }
 
 }

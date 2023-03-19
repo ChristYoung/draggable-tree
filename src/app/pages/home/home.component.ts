@@ -23,7 +23,6 @@ export class HomeComponent implements OnInit {
 
   droped(n: NodeItem): void {
     this.segmentGroups.push([n]);
-    const path = getPathByNodeId(n.id, this.nodes);
   }
 
   private fetchAllNodeItem(): void {

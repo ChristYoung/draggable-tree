@@ -15,26 +15,35 @@ p, h3 { margin: 0; padding: 0; }
 .item_box {
   border: 1px solid #d6d4d4;
   background-color: #fff;
-  padding: 3px 0;
+  // padding: 3px 0;
   .seg_header {
+    display: flex;
+    align-items: center;
     padding: 3px 5px;
     border-bottom: 1px solid #d6d4d4;
+    .info {
+      display: flex;
+      align-items: center;
+      flex: 1;
+    }
+    .operator {
+      display: flex;
+      align-items: center;
+    }
     .icon {
       display: block; color: #9E9E9E;
       margin-right: 18px;
       font-size: 24px;
+      cursor: pointer;
      }
-    display: flex;
-    align-items: center;
     .equal {
       margin: 0 5px;
     }
   }
   .seg_body {
-    padding: 16px;
-    padding-bottom: 0;
+    padding: 0 16px;
     .path {
-      margin-bottom: 12px;
+      margin: 12px 0;
     }
     .values {
       .search_box {
@@ -66,4 +75,8 @@ p, h3 { margin: 0; padding: 0; }
       }
     }
   }
+}
+
+.noBorderBottom {
+  border-bottom: none;
 }
