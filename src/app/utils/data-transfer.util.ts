@@ -1,7 +1,7 @@
 // https://juejin.cn/post/7087415807445041165
-// get tree path by the node id.
 import { NodeItem } from '@types';
 
+// get tree path by the node id.
 export function getPathByNodeId(id: string, totalData: NodeItem[]): string {
   let result: NodeItem[] = [];
   let traverse = (curKey: string, path: NodeItem[], data: NodeItem[]) => {
@@ -12,7 +12,7 @@ export function getPathByNodeId(id: string, totalData: NodeItem[]): string {
     for (let item of data) {
       path.push(item);
       if (item.id === curKey) {
-        result = JSON.parse(JSON.stringify(path));
+        result = safeJSONParse(JSON.stringify(path));
         return;
       }
 

@@ -17,11 +17,11 @@ export class SegmentItemComponent implements OnInit {
   shrink: boolean = false;
 
   ngOnInit(): void {
-    this.filterValueList = this.segmentItem.valueList;
+    this.segmentItem.valueList.forEach(v => this.filterValueList.push({ ...v }));
   }
 
   valueSelectedChange(): void {
-    const selectedValueList = this.segmentItem.valueList.filter(v => v.checked);
+    const selectedValueList = this.filterValueList.filter(v => v.checked);
     this.selectedValues = selectedValueList.map(v => v.key).join(',');
     this.selectedCount = selectedValueList.length;
   }
