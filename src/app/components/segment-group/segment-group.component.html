@@ -1,5 +1,8 @@
-<ng-container *ngFor="let segmentItem of segments">
+<ng-container *ngFor="let segmentItem of segments; let _index = index;">
   <div class="item_container">
     <app-segment-item [segmentItem]="segmentItem"></app-segment-item>
+  </div>
+  <div class="divide_btn"  *ngIf="segments.length > 1 && _index < segments.length - 1;">
+    <button type="button" nz-button nzType="primary" nzShape="round">AND <span nz-icon nzType="down" nzTheme="outline"></span></button>
   </div>
 </ng-container>

@@ -10,8 +10,10 @@ export class SegmentListComponent implements OnInit {
 
   @Input() segmentGroups: NodeItem[][] = [];
 
-  ngOnInit(): void {
+  ngOnInit(): void { }
 
+  dropped(item: NodeItem, group: NodeItem[]): void {
+    group.push(item);
   }
 
 }

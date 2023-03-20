@@ -9,7 +9,7 @@ export class DroppableDirective {
 
   @Output() dropped: EventEmitter<any> = new EventEmitter<any>();
   @Input() droppedClass: string;
-  @Input() dropTags: string[];
+  @Input() dropTags: string[] = []; // store nodeItems ids.
 
   constructor(
     private ele: ElementRef,
