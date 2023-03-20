@@ -44,6 +44,7 @@ export class DroppableDirective {
     const { ele, rd2, droppedClass } = this;
     e.preventDefault();
     e.stopPropagation();
+    console.log('leave');
     rd2.removeClass(ele.nativeElement, droppedClass);
   }
 

@@ -17,7 +17,7 @@ export class SegmentItemComponent implements OnInit {
   shrink: boolean = false;
 
   ngOnInit(): void {
-    this.segmentItem.valueList.forEach(v => this.filterValueList.push({ ...v }));
+    this.filterValueList = this.pushSegItemImmutable(this.segmentItem.valueList);
   }
 
   valueSelectedChange(): void {
@@ -28,13 +28,13 @@ export class SegmentItemComponent implements OnInit {
 
   searchValueList(searchContent?: string): void {
     this.filterValueList = searchContent ?
-      this.segmentItem.valueList.filter(v => v.key.includes(searchContent))
-      : this.segmentItem.valueList;
+      this.pushSegItemImmutable(this.segmentItem.valueList.filter(v => v.key.includes(searchContent)))
+      : this.pushSegItemImmutable(this.segmentItem.valueList);
   }
 
   clearAll(): void {
     if (this.selectedCount > 0) {
-      this.segmentItem.valueList.forEach(v => v.checked = false);
+      this.filterValueList.forEach(v => v.checked = false);
       this.selectedValues = null;
       this.selectedCount = 0;
     }
@@ -42,6 +42,12 @@ export class SegmentItemComponent implements OnInit {
 
   close(): void {
     // TODO
+  }
+
+  private pushSegItemImmutable(sources: ValueItem[]): ValueItem[] {
+    const targetsItems = [];
+    sources.forEach(s => targetsItems.push({ ...s }));
+    return targetsItems;
   }
 
 }

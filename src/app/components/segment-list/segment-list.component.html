@@ -1,5 +1,5 @@
 <ng-container *ngFor="let group of segmentGroups; let _index = index;">
-  <div class="group_container">
+  <div class="group_container" appDroppable [droppedClass]="'droppedClass'">
     <app-segment-group [segments]="group"></app-segment-group>
   </div>
   <div class="divide_btn"  *ngIf="segmentGroups.length > 1 && _index < segmentGroups.length - 1;">

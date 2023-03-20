@@ -1,3 +1,5 @@
-<div class="item_container" *ngFor="let segmentItem of segments">
-  <app-segment-item [segmentItem]="segmentItem"></app-segment-item>
-</div>
+<ng-container *ngFor="let segmentItem of segments">
+  <div class="item_container">
+    <app-segment-item [segmentItem]="segmentItem"></app-segment-item>
+  </div>
+</ng-container>
