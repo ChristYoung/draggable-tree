@@ -2,6 +2,7 @@
   padding: 5px;
   background-color: #fff;
   border: 2px solid transparent;
+  position: relative;
 }
 
 .divide_btn {
@@ -10,4 +11,15 @@
 
 .droppedClass {
   border: 2px solid #52C41A;
+  &::before {
+    // 为了解决dragLeave会在子元素上不停触发,导致拖拽样式疯狂闪动的问题, 当dragover的时候, 给被拖拽的元素设置一个蒙层遮罩, 这样dragLeave就只会在有droppable指令的元素上触发了
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: transparent;
+    z-index: 999;
+  }
 }

@@ -22,8 +22,6 @@ export class DroppableDirective {
     const { ele, rd2, droppedClass } = this;
     e.preventDefault();
     // e.stopPropagation(); // if uncomment this, the drag pollify will be failure.
-    // console.log("DroppableDirective -> dragover -> ele.nativeElement", ele.nativeElement);
-    // console.log("DroppableDirective -> dragover -> e.target", e.target);
     rd2.addClass(ele.nativeElement, droppedClass);
   }
 
@@ -32,11 +30,9 @@ export class DroppableDirective {
     const { ele, rd2, droppedClass } = this;
     e.preventDefault();
     e.stopPropagation();
-    console.log(e.target, 'leave');
-    // if (this.ele.nativeElement === e.target) {
-    //   rd2.removeClass(ele.nativeElement, droppedClass);
-    // }
-    rd2.removeClass(ele.nativeElement, droppedClass);
+    if (this.ele.nativeElement === e.target) {
+      rd2.removeClass(ele.nativeElement, droppedClass);
+    }
   }
 
   @HostListener('drop', ['$event'])
