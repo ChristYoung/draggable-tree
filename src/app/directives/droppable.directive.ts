@@ -7,9 +7,20 @@ import { DragDataService } from '../services/drag-data.service';
 })
 export class DroppableDirective {
 
+  private _candroppable: boolean;
+
   @Output() dropped: EventEmitter<any> = new EventEmitter<any>();
   @Input() droppedClass: string;
   @Input() dropTags: string[] = []; // store nodeItems ids.
+
+  @Input('appDroppable')
+  set canDroppable(val: boolean) {
+    this._candroppable = val;
+  }
+
+  get canDroppable(): boolean {
+    return this._candroppable;
+  }
 
   constructor(
     private ele: ElementRef,
@@ -17,12 +28,29 @@ export class DroppableDirective {
     private dragDataService: DragDataService,
   ) { }
 
+  @HostListener('dragenter', ['$event'])
+  onDragEnter(e: Event) {
+    e.preventDefault();
+    e.stopPropagation();
+    if (this.canDroppable) {
+      this.rd2.addClass(this.ele.nativeElement, this.droppedClass);
+    }
+  }
+
   @HostListener('dragover', ['$event'])
-  onDragOver(e: Event): void {
-    const { ele, rd2, droppedClass } = this;
+  onDragOver(e: DragEvent): void {
     e.preventDefault();
     // e.stopPropagation(); // if uncomment this, the drag pollify will be failure.
-    rd2.addClass(ele.nativeElement, droppedClass);
+    if (this.ele.nativeElement === e.target) {
+      if (this.canDroppable) {
+        this.rd2.setProperty(e, 'dataTransfer.effectAllowed', 'all');
+        this.rd2.setProperty(e, 'dataTransfer.dropEffect', 'move');
+      } else {
+        console.log('this.canDroppable', this.canDroppable);
+        this.rd2.setProperty(e, 'dataTransfer.effectAllowed', 'none');
+        this.rd2.setProperty(e, 'dataTransfer.dropEffect', 'link');
+      }
+    }
   }
 
   @HostListener('dragleave', ['$event'])
@@ -43,7 +71,9 @@ export class DroppableDirective {
     // console.log("DroppableDirective -> onDrop -> ele.nativeElement", ele.nativeElement);
     // console.log("DroppableDirective -> onDrop -> e.target", e.target);
     rd2.removeClass(ele.nativeElement, droppedClass);
-    dragDataService.getDragData$().pipe(take(1)).subscribe(dragData => dropped.emit(dragData));
+    if (this.canDroppable) {
+      dragDataService.getDragData$().pipe(take(1)).subscribe(dragData => dropped.emit(dragData));
+    }
   }
 
 }

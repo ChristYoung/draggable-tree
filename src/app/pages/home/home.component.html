@@ -1,4 +1,4 @@
-<!-- segmentGroups: {{ segmentGroups | json }} -->
+segmentGroups: {{ segmentGroups | json }}
 <div class="main" nz-row>
   <div class="left_side" nz-col [nzSpan]="10">
     <nz-skeleton [nzActive]="true" [nzLoading]="loading"></nz-skeleton>
@@ -10,7 +10,7 @@
   </div>
   <div class="right_side" nz-col [nzSpan]="14">
     <p>Include members in these segments</p>
-    <div class="card_container" appDroppable [droppedClass]="'droppedClass'" (dropped)="droped($event)">
+    <div class="card_container" [appDroppable]="true" [droppedClass]="'droppedClass'" (dropped)="droped($event)">
       <div class="seg_wrapper" *ngIf="segmentGroups.length > 0; else noData">
         <app-segment-list [segmentGroups]="segmentGroups"></app-segment-list>
       </div>
