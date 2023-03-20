@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { NodeItem } from '@types';
+import { NodeItem } from 'src/app/types';
 import { getPathByNodeId } from '@utils';
 import { tap, delay, finalize, take } from 'rxjs';
 

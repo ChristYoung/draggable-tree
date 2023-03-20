@@ -24,7 +24,7 @@
     ],
     "paths": {
       "@types": [
-        "src/types/index.ts"
+        "src/app/types/index.ts"
       ],
       "@utils": [
         "src/app/utils/index.ts"

@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { NodeItem, ValueItem } from '@types';
+import { NodeItem, ValueItem } from 'src/app/types';
 
 @Component({
   selector: 'app-segment-item',

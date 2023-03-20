@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { NodeItem } from '@types';
+import { NodeItem } from 'src/app/types';
 
 @Component({
   selector: 'app-segment-group',

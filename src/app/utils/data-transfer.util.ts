@@ -1,5 +1,5 @@
 // https://juejin.cn/post/7087415807445041165
-import { NodeItem } from '@types';
+import { NodeItem } from 'src/app/types';
 
 // get tree path by the node id.
 export function getPathByNodeId(id: string, totalData: NodeItem[]): string {

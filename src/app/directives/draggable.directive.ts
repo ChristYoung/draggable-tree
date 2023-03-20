@@ -1,5 +1,5 @@
 import { Directive, ElementRef, HostListener, Input, Renderer2 } from '@angular/core';
-import { NodeItem } from '@types';
+import { NodeItem } from 'src/app/types';
 import { DragDataService } from '../services/drag-data.service';
 
 @Directive({

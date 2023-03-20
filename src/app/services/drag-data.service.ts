@@ -1,6 +1,6 @@
 // transfer drag data.
 import { Injectable } from '@angular/core';
-import { NodeItem } from '@types';
+import { NodeItem } from 'src/app/types';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { getPathByNodeId, safeJSONParse } from '../utils/data-transfer.util';
 
