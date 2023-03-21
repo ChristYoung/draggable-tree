@@ -24,7 +24,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         with:
-          source-directory: "dist"
+          source-directory: "dist/draggable-tree"
           target-branch: "gh-pages"
           user-name: "ChristYoung"
           user-email: "858851768@qq.com"
