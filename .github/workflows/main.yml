@@ -1,0 +1,30 @@
+name: deploy-notions
+
+on:
+  push:
+    branches:
+      - "main"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: install nodejs
+        uses: actions/setup-node@v3
+        with:
+          node-version: "16.x"
+
+      - name: install deps
+        run: npm install
+
+      - name: deploy apps
+        uses: ptienchuan/deploy-github-pages-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        with:
+          source-directory: "dist"
+          target-branch: "gh-pages"
+          user-name: "ChristYoung"
+          user-email: "858851768@qq.com"
