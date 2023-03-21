@@ -5,7 +5,9 @@
       [dropTags]="group.groupIds"
       [droppedClass]="'droppedClass'"
       (dropped)="dropped($event, group)">
-    <app-segment-group [segments]="group.segments"></app-segment-group>
+    <app-segment-group
+      [groupItem]="group"
+      (deleted)="deleteGroupItem($event)"></app-segment-group>
   </div>
   <div class="divide_btn"  *ngIf="segmentGroups.length > 1 && _index < segmentGroups.length - 1;">
     <button type="button" nz-button nzType="primary" nzShape="round">AND <span nz-icon nzType="down" nzTheme="outline"></span></button>

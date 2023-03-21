@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { NodeItem, ValueItem } from 'src/app/types';
 
 @Component({
@@ -9,6 +9,8 @@ import { NodeItem, ValueItem } from 'src/app/types';
 export class SegmentItemComponent implements OnInit {
 
   @Input() segmentItem: NodeItem;
+  @Output() deleted: EventEmitter<NodeItem> = new EventEmitter<NodeItem>();
+
   selectedValues: string;
   filterValueList: ValueItem[] = [];
   searchContent: string;
@@ -41,7 +43,7 @@ export class SegmentItemComponent implements OnInit {
   }
 
   close(): void {
-    // TODO
+    this.deleted.emit(this.segmentItem);
   }
 
   private pushSegItemImmutable(sources: ValueItem[]): ValueItem[] {

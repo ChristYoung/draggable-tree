@@ -18,4 +18,8 @@ export class SegmentListComponent implements OnInit {
     group.segments.push(n);
   }
 
+  deleteGroupItem(g: GroupItem): void {
+    this.segmentGroups.splice(this.segmentGroups.indexOf(g), 1);
+  }
+
 }

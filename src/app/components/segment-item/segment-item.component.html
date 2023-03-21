@@ -12,7 +12,7 @@ segmentItem: {{ segmentItem.valueList | json }} -->
       <span class="icon" nz-icon
       [nzType]="shrink ? 's:doubleup' : 's:doubledown'" [nzTheme]="'outline'" style="margin-right: 3px;"
       (click)="shrink = !shrink"></span>
-      <span style="cursor: pointer;"  nz-icon nzType="close" nzTheme="outline"></span>
+      <span style="cursor: pointer;"  nz-icon nzType="close" nzTheme="outline" (click)="close()"></span>
     </div>
   </div>
   <div class="seg_body" [hidden]="shrink">
