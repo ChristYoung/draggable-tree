@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { NodeItem } from 'src/app/types';
+import { GroupItem, NodeItem } from 'src/app/types';
 import { getPathByNodeId } from '@utils';
 import { tap, delay, finalize, take } from 'rxjs';
 
@@ -12,7 +12,7 @@ import { tap, delay, finalize, take } from 'rxjs';
 export class HomeComponent implements OnInit {
 
   nodes: NodeItem[] = [];
-  segmentGroups: NodeItem[][] = [];
+  segmentGroups: GroupItem[] = [];
   loading: boolean = false;
 
   constructor(private httpClient: HttpClient,) { }
@@ -21,8 +21,12 @@ export class HomeComponent implements OnInit {
     this.fetchAllNodeItem();
   }
 
+  // create a new group
   droped(n: NodeItem): void {
-    this.segmentGroups.push([n]);
+    this.segmentGroups.push({
+      groupIds: [n.id],
+      segments: [n]
+    });
   }
 
   private fetchAllNodeItem(): void {

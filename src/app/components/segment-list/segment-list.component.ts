@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { NodeItem } from 'src/app/types';
+import { GroupItem, NodeItem } from 'src/app/types';
 
 @Component({
   selector: 'app-segment-list',
@@ -8,12 +8,14 @@ import { NodeItem } from 'src/app/types';
 })
 export class SegmentListComponent implements OnInit {
 
-  @Input() segmentGroups: NodeItem[][] = [];
+  @Input() segmentGroups: GroupItem[] = [];
 
   ngOnInit(): void { }
 
-  dropped(item: NodeItem, group: NodeItem[]): void {
-    group.push(item);
+  // add a new segment in a specific group
+  dropped(n: NodeItem, group: GroupItem): void {
+    group.groupIds.push(n.id);
+    group.segments.push(n);
   }
 
 }
