@@ -2,6 +2,7 @@
   <!-- <p>groupLen: {{ group.length }}</p> -->
   <div class="group_container"
       [appDroppable]="true"
+      [dropTags]="group.groupIds"
       [droppedClass]="'droppedClass'"
       (dropped)="dropped($event, group)">
     <app-segment-group [segments]="group.segments"></app-segment-group>

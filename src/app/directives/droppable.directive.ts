@@ -1,5 +1,4 @@
 import { Directive, ElementRef, EventEmitter, HostListener, Input, Output, Renderer2 } from '@angular/core';
-import { take } from 'rxjs/operators';
 import { DragDataService } from '../services/drag-data.service';
 
 @Directive({
@@ -11,7 +10,7 @@ export class DroppableDirective {
 
   @Output() dropped: EventEmitter<any> = new EventEmitter<any>();
   @Input() droppedClass: string;
-  @Input() dropTags: string[] = []; // store nodeItems ids.
+  @Input() dropTags: string[] = null; // store nodeItems ids.
 
   @Input('appDroppable')
   set canDroppable(val: boolean) {
@@ -32,7 +31,8 @@ export class DroppableDirective {
   onDragEnter(e: Event) {
     e.preventDefault();
     e.stopPropagation();
-    if (this.canDroppable) {
+    const dragDataTag = this.dragDataService.getDragData().id;
+    if ((this.dropTags && !this.dropTags.includes(dragDataTag)) || !this.dropTags) {
       this.rd2.addClass(this.ele.nativeElement, this.droppedClass);
     }
   }
@@ -41,8 +41,9 @@ export class DroppableDirective {
   onDragOver(e: DragEvent): void {
     e.preventDefault();
     // e.stopPropagation(); // if uncomment this, the drag pollify will be failure.
+    const dragDataTag = this.dragDataService.getDragData().id;
     if (this.ele.nativeElement === e.target) {
-      if (this.canDroppable) {
+      if ((this.dropTags && !this.dropTags.includes(dragDataTag)) || !this.dropTags) {
         this.rd2.setProperty(e, 'dataTransfer.effectAllowed', 'all');
         this.rd2.setProperty(e, 'dataTransfer.dropEffect', 'move');
       } else {
@@ -71,7 +72,8 @@ export class DroppableDirective {
     // console.log("DroppableDirective -> onDrop -> ele.nativeElement", ele.nativeElement);
     // console.log("DroppableDirective -> onDrop -> e.target", e.target);
     rd2.removeClass(ele.nativeElement, droppedClass);
-    if (this.canDroppable) {
+    const dragDataTag = this.dragDataService.getDragData().id;
+    if ((this.dropTags && !this.dropTags.includes(dragDataTag)) || !this.dropTags) {
       dropped.emit(dragDataService.getDragData());
       dragDataService.clearDragData();
     }

@@ -1,8 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { delay, finalize, take, tap } from 'rxjs';
 import { GroupItem, NodeItem } from 'src/app/types';
-import { getPathByNodeId } from '@utils';
-import { tap, delay, finalize, take } from 'rxjs';
 
 @Component({
   selector: 'app-home',
