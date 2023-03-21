@@ -72,7 +72,8 @@ export class DroppableDirective {
     // console.log("DroppableDirective -> onDrop -> e.target", e.target);
     rd2.removeClass(ele.nativeElement, droppedClass);
     if (this.canDroppable) {
-      dragDataService.getDragData$().pipe(take(1)).subscribe(dragData => dropped.emit(dragData));
+      dropped.emit(dragDataService.getDragData());
+      dragDataService.clearDragData();
     }
   }
 

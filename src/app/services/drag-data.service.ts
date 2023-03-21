@@ -9,21 +9,21 @@ import { getPathByNodeId, safeJSONParse } from '../utils/data-transfer.util';
 })
 export class DragDataService {
 
-  private _dragData$: BehaviorSubject<NodeItem> = new BehaviorSubject<NodeItem>(null);
+  private _dragData: NodeItem;
 
   clearDragData(): void {
-    this._dragData$.next(null);
+    this._dragData = null;
   }
 
   setDragData(dragData: NodeItem): void {
     const allNodes = safeJSONParse<NodeItem[]>(sessionStorage.getItem('allNodes'));
     const path = getPathByNodeId(dragData.id, allNodes);
     dragData.path = path;
-    this._dragData$.next(dragData);
+    this._dragData = dragData;
   }
 
-  getDragData$(): Observable<any> {
-    return this._dragData$.asObservable();
+  getDragData(): NodeItem {
+    return this._dragData;
   }
 
   constructor() { }
