@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { delay, finalize, take, tap } from 'rxjs';
+import { DragDataService } from 'src/app/services/drag-data.service';
 import { GroupItem, NodeItem } from 'src/app/types';
 
 @Component({
@@ -14,7 +15,10 @@ export class HomeComponent implements OnInit {
   segmentGroups: GroupItem[] = [];
   loading: boolean = false;
 
-  constructor(private httpClient: HttpClient,) { }
+  constructor(
+    private httpClient: HttpClient,
+    private dragData: DragDataService,
+  ) { }
 
   ngOnInit(): void {
     this.fetchAllNodeItem();
@@ -31,11 +35,11 @@ export class HomeComponent implements OnInit {
   private fetchAllNodeItem(): void {
     this.loading = true;
     this.httpClient.request('get', 'assets/mock/mock-data.json').pipe(
-      tap(res => sessionStorage.setItem('allNodes', JSON.stringify(res))),
+      tap((nodes: NodeItem[]) => this.dragData.setAllNodes(nodes)),
       delay(900),
       finalize(() => this.loading = false),
       take(1),
-    ).subscribe(nodes => this.nodes = nodes as NodeItem[]);
+    ).subscribe((nodes: NodeItem[]) => this.nodes = nodes as NodeItem[]);
   }
 
 }
