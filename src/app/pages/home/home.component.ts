@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { finalize, take, tap } from 'rxjs';
 import { DragDataService } from 'src/app/services/drag-data.service';
 import { GroupItem, NodeItem } from 'src/app/types';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-home',
@@ -33,8 +34,9 @@ export class HomeComponent implements OnInit {
   }
 
   private fetchAllNodeItem(): void {
+    const API_URL = environment.usingMock ? 'api/v1/audiences' : 'assets/mock/mock-data.json';
     this.loading = true;
-    this.httpClient.request('get', 'api/v1/audiences').pipe(
+    this.httpClient.request('get', API_URL).pipe(
       tap((nodes: NodeItem[]) => this.dragData.setAllNodes(nodes)),
       finalize(() => this.loading = false),
       take(1),

@@ -26,20 +26,19 @@
             "assets": [
               "src/favicon.ico",
               "src/assets",
+              "src/mockServiceWorker.js",
               {
                 "glob": "**/*",
                 "input": "./node_modules/@ant-design/icons-angular/src/inline-svg/",
                 "output": "/assets/"
               }
             ],
-            "styles": [
-              "src/styles.less"
-            ],
-            "baseHref": "/draggable-tree/",
+            "styles": ["src/styles.less"],
             "scripts": []
           },
           "configurations": {
             "production": {
+              "baseHref": "/draggable-tree/",
               "budgets": [
                 {
                   "type": "initial",
@@ -99,11 +98,10 @@
             "inlineStyleLanguage": "less",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/mockServiceWorker.js"
             ],
-            "styles": [
-              "src/styles.less"
-            ],
+            "styles": ["src/styles.less"],
             "scripts": []
           }
         }
