@@ -5,6 +5,8 @@ import { environment } from './environments/environment';
 import { setupWorker } from 'msw';
 import { handlers } from './app/mock/index';
 
+// Trying to use msw for data mocks.
+// https://mswjs.io/docs/cli/init.
 if (environment.usingMock) {
   setupWorker(...handlers).start();
 }
