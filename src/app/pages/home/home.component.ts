@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { delay, finalize, take, tap } from 'rxjs';
+import { finalize, take, tap } from 'rxjs';
 import { DragDataService } from 'src/app/services/drag-data.service';
 import { GroupItem, NodeItem } from 'src/app/types';
 
@@ -34,9 +34,8 @@ export class HomeComponent implements OnInit {
 
   private fetchAllNodeItem(): void {
     this.loading = true;
-    this.httpClient.request('get', 'assets/mock/mock-data.json').pipe(
+    this.httpClient.request('get', 'api/v1/audiences').pipe(
       tap((nodes: NodeItem[]) => this.dragData.setAllNodes(nodes)),
-      delay(900),
       finalize(() => this.loading = false),
       take(1),
     ).subscribe((nodes: NodeItem[]) => this.nodes = nodes as NodeItem[]);

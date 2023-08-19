@@ -30,7 +30,8 @@
         "src/app/utils/index.ts"
       ]
     },
-    "useDefineForClassFields": false
+    "useDefineForClassFields": false,
+    "resolveJsonModule": true,
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

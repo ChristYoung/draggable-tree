@@ -21,8 +21,6 @@ import { SegmentListComponent } from './components/segment-list/segment-list.com
 import { SegmentGroupComponent } from './components/segment-group/segment-group.component';
 import { SegmentItemComponent } from './components/segment-item/segment-item.component';
 import { DroppableDirective } from './directives/droppable.directive';
-// import 'draggable-polyfill';
-// import '../';
 
 registerLocaleData(zh);
 
