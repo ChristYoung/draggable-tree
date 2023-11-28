@@ -74,10 +74,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "draggable-tree:build:production"
+              "buildTarget": "draggable-tree:build:production"
             },
             "development": {
-              "browserTarget": "draggable-tree:build:development"
+              "buildTarget": "draggable-tree:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -85,7 +85,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "draggable-tree:build"
+            "buildTarget": "draggable-tree:build"
           }
         },
         "test": {
