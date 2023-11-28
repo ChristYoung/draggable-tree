@@ -1,12 +1,17 @@
-import { Directive, ElementRef, HostListener, Input, Renderer2 } from '@angular/core';
+import {
+  Directive,
+  ElementRef,
+  HostListener,
+  Input,
+  Renderer2,
+} from '@angular/core';
 import { NodeItem } from 'src/app/types';
 import { DragDataService } from '../services/drag-data.service';
 
 @Directive({
-  selector: '[appDraggable]'
+  selector: '[appDraggable]',
 })
 export class DraggableDirective {
-
   private _canDraggable!: boolean;
 
   @Input('appDraggable')
@@ -26,8 +31,8 @@ export class DraggableDirective {
   constructor(
     private ele: ElementRef,
     private rd2: Renderer2,
-    private dragDataService: DragDataService,
-  ) { }
+    private dragDataService: DragDataService
+  ) {}
 
   @HostListener('dragstart', ['$event'])
   onDragStart(e: Event): void {
@@ -45,5 +50,4 @@ export class DraggableDirective {
       rd2.removeClass(ele.nativeElement, draggingClass);
     }
   }
-
 }
