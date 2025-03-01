@@ -37,3 +37,4 @@
     "src/mockServiceWorker.js"
   ],
 ```
+- 如果启动后，拦截请求报错: ``` Type Error: response2.headers.all is not a function ```, 需要安装``` npm i headers-polyfill@3.2.5 -D ```
