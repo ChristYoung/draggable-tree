@@ -1,21 +1,39 @@
-# DraggableTree
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.4.
-
-[Online Demo](https://christyoung.github.io/draggable-tree/#/home)
-
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## 总结在Angular项目中安装和使用msw@1.2.3来mock数据的要点
+- 安装msw@1.2.3
+- 执行 ```npx msw init src/ --save```, 这样会自动在src目录下生成mockServiceWorker.js文件
+- 手动在src目录下创建一个mock目录, 并创建browser.ts和handler.ts文件
+- browser.ts文件中引入handler.ts文件, 并调用setupWorker方法：
+ ```typescript
+  import { setupWorker, reset } from 'msw';
+  import { handlers } from './handler';
+  export const worker = setupWorker(...handlers);
+ ```
+- handler.ts文件中编写mock数据：
+ ```typescript
+  import { rest } from 'msw';
+  import { setupWorker, reset } from 'msw';
+  import { handlers } from './handler';
+  export const worker = setupWorker(...handlers);
+  export const handlers = [
+    rest.get('/api/user', (req, res, ctx) => {
+      return res(
+        ctx.json({
+          name: '张三',
+          age: 18,
+        })
+      );
+    }),]
+ ```
+- 在main.ts文件中引入browser中的worker：
+```typescript
+ import {} from './mock/browser';
+ worker.start();
+```
+- 注意在angular.json中要配置将mockServiceWorker.js文件添加到assets中：
+```json
+"assets": [
+    "src/favicon.ico",
+    "src/assets",
+    "src/mockServiceWorker.js"
+  ],
+```
